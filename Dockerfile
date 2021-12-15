@@ -14,6 +14,8 @@ ENV SCRAPYRT_VERSION=v0.12
 ENV SPIDERMON_VERSION=1.15.2
 ENV PILLOW_VERSION=8.4.0
 
+SHELL ["/bin/bash", "-c"]
+
 RUN set -xe \
     && echo ${TARGETPLATFORM} \
     && apt-get update \
