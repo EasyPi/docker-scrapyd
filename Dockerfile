@@ -5,6 +5,8 @@
 FROM debian:bullseye
 MAINTAINER EasyPi Software Foundation
 
+ARG TARGETPLATFORM
+
 ENV SCRAPY_VERSION=2.5.1
 ENV SCRAPYD_VERSION=1.2.1
 ENV SCRAPYD_CLIENT_VERSION=v1.2.0
@@ -13,6 +15,7 @@ ENV SPIDERMON_VERSION=1.15.2
 ENV PILLOW_VERSION=8.4.0
 
 RUN set -xe \
+    && echo ${TARGETPLATFORM} \
     && apt-get update \
     && apt-get install -y autoconf \
                           build-essential \
