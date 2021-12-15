@@ -41,6 +41,7 @@ RUN set -xe \
                           libwebp-dev \
                           zlib1g \
                           zlib1g-dev \
+    && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt install -y cargo; fi \
     && curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 \
     && pip install --no-cache-dir ipython \
                    git+https://github.com/scrapy/scrapy.git@$SCRAPY_VERSION \
@@ -52,6 +53,7 @@ RUN set -xe \
                    git+https://github.com/python-pillow/Pillow.git@$PILLOW_VERSION \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
     && echo 'source /etc/bash_completion.d/scrapy_bash_completion' >> /root/.bashrc \
+    && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt purge -y --auto-remove cargo; fi \
     && apt-get purge -y --auto-remove autoconf \
                                       build-essential \
                                       curl \
