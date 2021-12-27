@@ -22,7 +22,6 @@ RUN set -xe \
     && apt-get install -y autoconf \
                           build-essential \
                           curl \
-                          git \
                           libffi-dev \
                           libssl-dev \
                           libtool \
@@ -49,13 +48,13 @@ RUN set -xe \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt install -y cargo; fi \
     && curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 \
     && pip install --no-cache-dir ipython \
-                   git+https://github.com/scrapy/scrapy.git@$SCRAPY_VERSION \
-                   git+https://github.com/scrapy/scrapyd.git@$SCRAPYD_VERSION \
-                   git+https://github.com/scrapy/scrapyd-client.git@$SCRAPYD_CLIENT_VERSION \
-                   git+https://github.com/scrapinghub/scrapy-splash.git \
-                   git+https://github.com/scrapinghub/scrapyrt.git@$SCRAPYRT_VERSION \
-                   git+https://github.com/scrapinghub/spidermon.git@$SPIDERMON_VERSION \
-                   git+https://github.com/python-pillow/Pillow.git@$PILLOW_VERSION \
+                   https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_VERSION.zip \
+                   https://github.com/scrapy/scrapyd/archive/refs/tags/$SCRAPYD_VERSION.zip \
+                   https://github.com/scrapy/scrapyd-client/archive/refs/tags/$SCRAPYD_CLIENT_VERSION.zip \
+                   https://github.com/scrapy-plugins/scrapy-splash/archive/refs/heads/master.zip \
+                   https://github.com/scrapinghub/scrapyrt/archive/refs/tags/$SCRAPYRT_VERSION.zip \
+                   https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
+                   https://github.com/python-pillow/Pillow/archive/refs/tags/$PILLOW_VERSION.zip \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
     && echo 'source /etc/bash_completion.d/scrapy_bash_completion' >> /root/.bashrc \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt purge -y --auto-remove cargo; fi \
