@@ -2,6 +2,7 @@ scrapyd
 =======
 
 [![](https://github.com/easypi/docker-scrapyd/actions/workflows/build.yaml/badge.svg)](https://github.com/EasyPi/docker-scrapyd)
+
 [![](http://dockeri.co/image/easypi/scrapyd)](https://hub.docker.com/r/easypi/scrapyd)
 
 [scrapy][1] is an open source and collaborative framework for extracting the
@@ -21,7 +22,7 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [pillow][7] is the Python Imaging Library to support the ImagesPipeline.
 
-This image is based on `debian:buster`, 7 latest python packages are installed:
+This image is based on `debian:bullseye`, seven latest python packages are installed:
 
 - `scrapy`: git+https://github.com/scrapy/scrapy.git
 - `scrapyd`: git+https://github.com/scrapy/scrapyd.git
