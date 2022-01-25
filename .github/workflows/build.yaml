@@ -39,9 +39,35 @@ jobs:
             ghcr.io/easypi/scrapyd:latest
           push: true
 
-      - uses: slackapi/slack-github-action@v1.16.0
+      - if: ${{ always() }}
+        uses: slackapi/slack-github-action@v1.16.0
         with:
           channel-id: github
-          slack-message: 'docker build "scrapyd:latest" ok'
+          payload: |
+            {
+              "attachments": [
+                {
+                  "color": "${{ env.SLACK_COLOR }}",
+                  "title": "${{ github.repository }}",
+                  "title_link": "${{ github.repositoryUrl }}",
+                  "text": "docker build image result",
+                  "fields": [
+                    {
+                      "title": "Image",
+                      "value": "easypi/scrapyd",
+                      "short": true
+                    },
+                    {
+                      "title": "Status",
+                      "value": "${{ job.status }}",
+                      "short": true
+                    }
+                  ],
+                  "footer": "Github Action",
+                  "footer_icon": "https://github.githubassets.com/favicon.ico"
+                }
+              ]
+            }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_COLOR: "${{ job.status == 'success' && 'good' || 'danger' }}"
