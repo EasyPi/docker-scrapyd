@@ -22,15 +22,15 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [pillow][7] is the Python Imaging Library to support the ImagesPipeline.
 
-This image is based on `debian:bullseye`, seven latest stable python packages are installed:
+This image is based on `debian:bullseye`, 7 latest stable python packages are installed:
 
-- [scrapy](https://github.com/scrapy/scrapy.git)
-- [scrapyd](https://github.com/scrapy/scrapyd.git)
-- [scrapyd-client](https://github.com/scrapy/scrapyd-client.git)
-- [scrapy-splash](https://github.com/scrapinghub/scrapy-splash.git)
-- [scrapyrt](https://github.com/scrapinghub/scrapyrt.git)
-- [spidermon](https://github.com/scrapinghub/spidermon.git)
-- [pillow](https://github.com/python-pillow/Pillow.git)
+- scrapy==2.5.1
+- scrapyd==1.3.0
+- scrapyd-client==v1.2.0
+- scrapy-splash==latest
+- scrapyrt==v0.13
+- spidermon==1.16.2
+- pillow==9.0.0
 
 Please use this as base image for your own project.
 
