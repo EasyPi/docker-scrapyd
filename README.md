@@ -33,11 +33,11 @@ This image is based on `debian:bullseye`, eight latest stable python packages ar
 - scrapyrt==v0.13
 - spidermon==1.16.2
 - scrapy-poet==0.3.0
-- pillow==9.0.0
+- pillow==9.0.1
 
 Please use this as base image for your own project.
 
-:warning: Scrapy has dropped support for Python 2.7, which reached end-of-life on 2020-01-01.
+:warning: Scrapy (since [2.0.0][9]) has dropped support for Python 2.7, which reached end-of-life on 2020-01-01.
 
 ## docker-compose.yml
 
@@ -162,3 +162,4 @@ $ curl -s 'http://localhost:9080/crawl.json?spider_name=toscrape-css&callback=pa
 [6]: https://github.com/scrapinghub/spidermon
 [7]: https://github.com/scrapinghub/scrapy-poet
 [8]: https://github.com/python-pillow/Pillow
+[9]: <https://docs.scrapy.org/en/latest/news.html#scrapy-2-0-0-2020-03-03>
