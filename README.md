@@ -20,9 +20,11 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [spidermon][6] is a framework to build monitors for Scrapy spiders.
 
-[pillow][7] is the Python Imaging Library to support the ImagesPipeline.
+[scrapy-poet][7] is the web-poet Page Object pattern implementation for Scrapy.
 
-This image is based on `debian:bullseye`, 7 latest stable python packages are installed:
+[pillow][8] is the Python Imaging Library to support the ImagesPipeline.
+
+This image is based on `debian:bullseye`, eight latest stable python packages are installed:
 
 - scrapy==2.5.1
 - scrapyd==1.3.0
@@ -30,6 +32,7 @@ This image is based on `debian:bullseye`, 7 latest stable python packages are in
 - scrapy-splash==latest
 - scrapyrt==v0.13
 - spidermon==1.16.2
+- scrapy-poet==0.3.0
 - pillow==9.0.0
 
 Please use this as base image for your own project.
@@ -157,4 +160,5 @@ $ curl -s 'http://localhost:9080/crawl.json?spider_name=toscrape-css&callback=pa
 [4]: https://github.com/scrapinghub/scrapy-splash
 [5]: https://github.com/scrapinghub/scrapyrt
 [6]: https://github.com/scrapinghub/spidermon
-[7]: https://github.com/python-pillow/Pillow
+[7]: https://github.com/scrapinghub/scrapy-poet
+[8]: https://github.com/python-pillow/Pillow

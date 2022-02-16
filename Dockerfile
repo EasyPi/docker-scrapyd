@@ -11,6 +11,7 @@ ARG SCRAPYD_VERSION=1.3.0
 ARG SCRAPYD_CLIENT_VERSION=v1.2.0
 ARG SCRAPYRT_VERSION=v0.13
 ARG SPIDERMON_VERSION=1.16.2
+ARG SCRAPY_POET_VERSION=0.3.0
 ARG PILLOW_VERSION=9.0.0
 
 SHELL ["/bin/bash", "-c"]
@@ -53,6 +54,7 @@ RUN set -xe \
                    https://github.com/scrapy-plugins/scrapy-splash/archive/refs/heads/master.zip \
                    https://github.com/scrapinghub/scrapyrt/archive/refs/tags/$SCRAPYRT_VERSION.zip \
                    https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
+                   https://github.com/scrapinghub/scrapy-poet/archive/refs/tags/$SCRAPY_POET_VERSION.zip \
                    https://github.com/python-pillow/Pillow/archive/refs/tags/$PILLOW_VERSION.zip \
     && mkdir -p /etc/bash_completion.d \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
