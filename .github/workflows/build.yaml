@@ -8,6 +8,11 @@ on:
     paths-ignore:
       - README.md
 
+env:
+  IMAGE_NAME: 'easypi/scrapyd'
+  SCRAPYD_VERSION: '1.3.0'
+  SCRAPY_VERSION: '2.6.1'
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -35,8 +40,10 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: |
-            easypi/scrapyd:latest
-            ghcr.io/easypi/scrapyd:latest
+            ${{ env.IMAGE_NAME }}:${{ env.SCRAPYD_VERSION }}-${{ env.SCRAPY_VERSION }}
+            ${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ env.IMAGE_NAME }}:${{ env.SCRAPYD_VERSION }}-${{ env.SCRAPY_VERSION }}
+            ghcr.io/${{ env.IMAGE_NAME }}:latest
           push: true
 
       - if: ${{ always() }}
@@ -47,14 +54,14 @@ jobs:
             {
               "attachments": [
                 {
-                  "color": "${{ env.SLACK_COLOR }}",
+                  "color": "${{ job.status == 'success' && 'good' || 'danger' }}",
                   "title": "${{ github.repository }}",
-                  "title_link": "${{ github.repositoryUrl }}",
+                  "title_link": "https://github.com/${{ github.repository }}",
                   "text": "docker build image result",
                   "fields": [
                     {
                       "title": "Image",
-                      "value": "easypi/scrapyd",
+                      "value": "<https://hub.docker.com/r/${{ env.IMAGE_NAME }}|${{ env.IMAGE_NAME }}>",
                       "short": true
                     },
                     {
@@ -63,11 +70,10 @@ jobs:
                       "short": true
                     }
                   ],
-                  "footer": "Github Action",
+                  "footer": "Github Actions",
                   "footer_icon": "https://github.githubassets.com/favicon.ico"
                 }
               ]
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_COLOR: "${{ job.status == 'success' && 'good' || 'danger' }}"
