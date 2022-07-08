@@ -28,12 +28,12 @@ This image is based on `debian:bullseye`, eight latest stable python packages ar
 
 - scrapy==2.6.1
 - scrapyd==1.3.0
-- scrapyd-client==v1.2.0
+- scrapyd-client==v1.2.2
 - scrapy-splash==latest
 - scrapyrt==v0.13
 - spidermon==1.16.2
-- scrapy-poet==0.3.0
-- pillow==9.0.1
+- scrapy-poet==0.4.0
+- pillow==9.2.0
 
 Please use this as base image for your own project.
 
