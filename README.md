@@ -22,9 +22,7 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [scrapy-poet][7] is the web-poet Page Object pattern implementation for Scrapy.
 
-[pillow][8] is the Python Imaging Library to support the ImagesPipeline.
-
-This image is based on `debian:bullseye`, eight latest stable python packages are installed:
+This image is based on `debian:bullseye`, seven latest stable python packages are installed:
 
 - scrapy==2.6.2
 - scrapyd==1.3.0
@@ -33,7 +31,6 @@ This image is based on `debian:bullseye`, eight latest stable python packages ar
 - scrapyrt==v0.13
 - spidermon==1.16.2
 - scrapy-poet==0.5.1
-- pillow==9.2.0
 
 Please use this as base image for your own project.
 

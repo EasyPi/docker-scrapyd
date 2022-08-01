@@ -12,7 +12,6 @@ ARG SCRAPYD_CLIENT_VERSION=v1.2.2
 ARG SCRAPYRT_VERSION=v0.13
 ARG SPIDERMON_VERSION=1.16.2
 ARG SCRAPY_POET_VERSION=0.5.1
-ARG PILLOW_VERSION=9.2.0
 
 SHELL ["/bin/bash", "-c"]
 
@@ -32,19 +31,9 @@ RUN set -xe \
                           python3 \
                           python3-dev \
                           python3-distutils \
+                          python3-pil \
                           tini \
                           vim-tiny \
-    && apt-get install -y libtiff5 \
-                          libtiff5-dev \
-                          libfreetype6-dev \
-                          libjpeg62-turbo \
-                          libjpeg62-turbo-dev \
-                          liblcms2-2 \
-                          liblcms2-dev \
-                          libwebp6 \
-                          libwebp-dev \
-                          zlib1g \
-                          zlib1g-dev \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt install -y cargo; fi \
     && curl -sSL https://bootstrap.pypa.io/get-pip.py | python3 \
     && pip install --no-cache-dir ipython \
@@ -55,7 +44,6 @@ RUN set -xe \
                    https://github.com/scrapinghub/scrapyrt/archive/refs/tags/$SCRAPYRT_VERSION.zip \
                    https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
                    https://github.com/scrapinghub/scrapy-poet/archive/refs/tags/$SCRAPY_POET_VERSION.zip \
-                   https://github.com/python-pillow/Pillow/archive/refs/tags/$PILLOW_VERSION.zip \
     && mkdir -p /etc/bash_completion.d \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
     && echo 'source /etc/bash_completion.d/scrapy_bash_completion' >> /root/.bashrc \
@@ -69,12 +57,6 @@ RUN set -xe \
                                       libxml2-dev \
                                       libxslt1-dev \
                                       python3-dev \
-    && apt-get purge -y --auto-remove libtiff5-dev \
-                                      libfreetype6-dev \
-                                      libjpeg62-turbo-dev \
-                                      liblcms2-dev \
-                                      libwebp-dev \
-                                      zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./scrapyd.conf /etc/scrapyd/
