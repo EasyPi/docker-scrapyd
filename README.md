@@ -29,7 +29,7 @@ This image is based on `debian:bullseye`, seven latest stable python packages ar
 - scrapyd-client==v1.2.2
 - scrapy-splash==latest
 - scrapyrt==v0.13
-- spidermon==1.16.2
+- spidermon==1.17.0
 - scrapy-poet==0.5.1
 
 Please use this as base image for your own project.
