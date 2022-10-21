@@ -29,6 +29,7 @@ RUN set -xe \
                           libxslt1.1 \
                           libxslt1-dev \
                           python3 \
+                          python3-cryptography \
                           python3-dev \
                           python3-distutils \
                           python3-pil \
