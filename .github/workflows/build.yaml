@@ -11,7 +11,7 @@ on:
 env:
   IMAGE_NAME: 'easypi/scrapyd'
   SCRAPYD_VERSION: '1.3.0'
-  SCRAPY_VERSION: '2.7.1'
+  SCRAPY_VERSION: '2.8.0'
 
 jobs:
   release:
