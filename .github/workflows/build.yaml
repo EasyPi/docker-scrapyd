@@ -10,7 +10,7 @@ on:
 
 env:
   IMAGE_NAME: 'easypi/scrapyd'
-  SCRAPYD_VERSION: '1.3.0'
+  SCRAPYD_VERSION: '1.4.0'
   SCRAPY_VERSION: '2.8.0'
 
 jobs:
