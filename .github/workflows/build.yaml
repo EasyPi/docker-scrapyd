@@ -9,7 +9,7 @@ on:
       - README.md
 
 env:
-  IMAGE_NAME: 'easypi/scrapyd'
+  IMAGE_NAME: 'vimagick/scrapyd'
   SCRAPYD_VERSION: '1.4.1'
   SCRAPY_VERSION: '2.8.0'
 
