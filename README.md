@@ -3,7 +3,7 @@ scrapyd
 
 [![](https://github.com/easypi/docker-scrapyd/actions/workflows/build.yaml/badge.svg)](https://github.com/EasyPi/docker-scrapyd)
 
-[![](http://dockeri.co/image/easypi/scrapyd)](https://hub.docker.com/r/easypi/scrapyd)
+[![](http://dockeri.co/image/vimagick/scrapyd)](https://hub.docker.com/r/vimagick/scrapyd)
 
 [scrapy][1] is an open source and collaborative framework for extracting the
 data you need from websites. In a fast, simple, yet extensible way.
@@ -44,7 +44,7 @@ version: "3.8"
 services:
 
   scrapyd:
-    image: easypi/scrapyd
+    image: vimagick/scrapyd
     ports:
       - "6800:6800"
     volumes:
@@ -53,7 +53,7 @@ services:
     restart: unless-stopped
 
   scrapy:
-    image: easypi/scrapyd
+    image: vimagick/scrapyd
     command: bash
     volumes:
       - .:/code
@@ -61,7 +61,7 @@ services:
     restart: unless-stopped
 
   scrapyrt:
-    image: easypi/scrapyd
+    image: vimagick/scrapyd
     command: scrapyrt -i 0.0.0.0 -p 9080
     ports:
       - "9080:9080"
