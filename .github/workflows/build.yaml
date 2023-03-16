@@ -9,6 +9,7 @@ on:
       - README.md
 
 env:
+  PLATFORMS: 'linux/amd64,linux/arm64'
   IMAGE_NAME: 'vimagick/scrapyd'
   SCRAPYD_VERSION: '1.4.1'
   SCRAPY_VERSION: '2.8.0'
@@ -38,15 +39,15 @@ jobs:
 
       - uses: docker/build-push-action@v2
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ env.PLATFORMS }}
           build-args: |
             SCRAPYD_VERSION=${{ env.SCRAPYD_VERSION }}
             SCRAPY_VERSION=${{ env.SCRAPY_VERSION }}
           tags: |
             ${{ env.IMAGE_NAME }}:${{ env.SCRAPYD_VERSION }}-${{ env.SCRAPY_VERSION }}
             ${{ env.IMAGE_NAME }}:latest
-            ghcr.io/${{ env.IMAGE_NAME }}:${{ env.SCRAPYD_VERSION }}-${{ env.SCRAPY_VERSION }}
-            ghcr.io/${{ env.IMAGE_NAME }}:latest
+          # ghcr.io/${{ env.IMAGE_NAME }}:${{ env.SCRAPYD_VERSION }}-${{ env.SCRAPY_VERSION }}
+          # ghcr.io/${{ env.IMAGE_NAME }}:latest
           push: true
 
       - if: ${{ always() }}
