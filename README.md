@@ -22,15 +22,22 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [scrapy-poet][7] is the web-poet Page Object pattern implementation for Scrapy.
 
-This image is based on `debian:bullseye`, seven latest stable python packages are installed:
+This image is based on `debian:bullseye`, 7 latest stable python packages are installed:
 
 - scrapy==2.8.0
 - scrapyd==1.4.1
 - scrapyd-client==v1.2.3
 - scrapy-splash==latest
 - scrapyrt==v0.13
-- spidermon==1.17.1
-- scrapy-poet==0.10.1
+- spidermon==1.18.0
+- scrapy-poet==0.11.0
+
+```bash
+# fetch latest versions
+echo "scrapy scrapyd scrapyd-client scrapy-splash scrapyrt spidermon scrapy-poet" |
+  xargs -n1 pip --disable-pip-version-check index versions 2>/dev/null |
+    grep -v Available
+```
 
 Please use this as base image for your own project.
 
