@@ -9,6 +9,7 @@ ARG TARGETPLATFORM
 ARG SCRAPY_VERSION=2.8.0
 ARG SCRAPYD_VERSION=1.4.1
 ARG SCRAPYD_CLIENT_VERSION=v1.2.3
+ARG SCRAPY_SPLASH_VERSION=0.9.0
 ARG SCRAPYRT_VERSION=v0.13
 ARG SPIDERMON_VERSION=1.18.0
 ARG SCRAPY_POET_VERSION=0.11.0
@@ -41,7 +42,7 @@ RUN set -xe \
                    https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_VERSION.zip \
                    https://github.com/scrapy/scrapyd/archive/refs/tags/$SCRAPYD_VERSION.zip \
                    https://github.com/scrapy/scrapyd-client/archive/refs/tags/$SCRAPYD_CLIENT_VERSION.zip \
-                   https://github.com/scrapy-plugins/scrapy-splash/archive/refs/heads/master.zip \
+                   https://github.com/scrapy-plugins/scrapy-splash/archive/refs/tags/$SCRAPY_SPLASH_VERSION.zip \
                    https://github.com/scrapinghub/scrapyrt/archive/refs/tags/$SCRAPYRT_VERSION.zip \
                    https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
                    https://github.com/scrapinghub/scrapy-poet/archive/refs/tags/$SCRAPY_POET_VERSION.zip \
