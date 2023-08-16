@@ -6,5 +6,5 @@ services:
       - "6800:6800"
     volumes:
       - ./data:/var/lib/scrapyd
-      - /usr/local/lib/python3.9/dist-packages
+      - /usr/local/lib/python3.11/dist-packages
     restart: unless-stopped
