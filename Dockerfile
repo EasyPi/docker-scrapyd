@@ -38,6 +38,7 @@ RUN set -xe \
                           tini \
                           vim-tiny \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt install -y cargo; fi \
+    && rm -f /usr/lib/python3.11/EXTERNALLY-MANAGED \
     && pip install --no-cache-dir botocore ipython \
                    https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_VERSION.zip \
                    https://github.com/scrapy/scrapyd/archive/refs/tags/$SCRAPYD_VERSION.zip \
