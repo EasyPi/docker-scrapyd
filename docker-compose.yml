@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   scrapyd:
-    image: vimagick/scrapyd
+    image: easypi/scrapyd
     ports:
       - "6800:6800"
     volumes:
