@@ -13,6 +13,7 @@ ARG SCRAPY_SPLASH_VERSION=0.9.0
 ARG SCRAPYRT_VERSION=v0.15.0
 ARG SPIDERMON_VERSION=1.20.0
 ARG SCRAPY_POET_VERSION=0.16.0
+ARG SCRAPY_PLAYWRIGHT_VERSION=v0.0.32
 
 SHELL ["/bin/bash", "-c"]
 
@@ -47,6 +48,7 @@ RUN set -xe \
                    https://github.com/scrapinghub/scrapyrt/archive/refs/tags/$SCRAPYRT_VERSION.zip \
                    https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
                    https://github.com/scrapinghub/scrapy-poet/archive/refs/tags/$SCRAPY_POET_VERSION.zip \
+                   https://github.com/scrapy-plugins/scrapy-playwright/archive/refs/tags/$SCRAPY_PLAYWRIGHT_VERSION.zip \
     && mkdir -p /etc/bash_completion.d \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
     && echo 'source /etc/bash_completion.d/scrapy_bash_completion' >> /root/.bashrc \
