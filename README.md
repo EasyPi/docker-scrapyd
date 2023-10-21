@@ -22,6 +22,8 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [scrapy-poet][7] is the web-poet Page Object pattern implementation for Scrapy.
 
+[scrapy-playwright][8] is a Scrapy Download Handler which performs requests using Playwright for Python.
+
 This image is based on `debian:bookworm`, 8 latest stable python packages are installed:
 
 - scrapy==2.11.0
@@ -31,7 +33,7 @@ This image is based on `debian:bookworm`, 8 latest stable python packages are in
 - scrapyrt==v0.15.0
 - spidermon==1.20.0
 - scrapy-poet==0.16.0
-- scrapy-playwright==v0.0.32
+- scrapy-playwright==v0.0.33
 
 ```bash
 # fetch latest versions
@@ -166,5 +168,5 @@ $ curl -s 'http://localhost:9080/crawl.json?spider_name=toscrape-css&callback=pa
 [5]: https://github.com/scrapinghub/scrapyrt
 [6]: https://github.com/scrapinghub/spidermon
 [7]: https://github.com/scrapinghub/scrapy-poet
-[8]: https://github.com/python-pillow/Pillow
+[8]: https://github.com/scrapy-plugins/scrapy-playwright
 [9]: <https://docs.scrapy.org/en/latest/news.html#scrapy-2-0-0-2020-03-03>
