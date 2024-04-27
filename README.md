@@ -32,7 +32,7 @@ This image is based on `debian:bookworm`, 8 latest stable python packages are in
 - scrapy-splash==0.9.0
 - scrapyrt==v0.16.0
 - spidermon==1.21.0
-- scrapy-poet==0.22.1
+- scrapy-poet==0.22.3
 - scrapy-playwright==v0.0.34
 
 ```bash
