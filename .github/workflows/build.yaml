@@ -12,7 +12,7 @@ env:
   PLATFORMS: 'linux/amd64,linux/arm64'
   IMAGE_NAME: 'easypi/scrapyd'
   SCRAPYD_VERSION: '1.4.3'
-  SCRAPY_VERSION: '2.11.1'
+  SCRAPY_VERSION: '2.11.2'
 
 jobs:
   release:
