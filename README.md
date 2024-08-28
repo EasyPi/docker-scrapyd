@@ -33,7 +33,7 @@ This image is based on `debian:bookworm`, 8 latest stable python packages are in
 - scrapyrt==v0.16.0
 - spidermon==1.22.0
 - scrapy-poet==0.23.0
-- scrapy-playwright==v0.0.40
+- scrapy-playwright==v0.0.41
 
 ```bash
 # fetch latest versions
