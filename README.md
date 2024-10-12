@@ -28,11 +28,11 @@ This image is based on `debian:bookworm`, 8 latest stable python packages are in
 
 - scrapy==2.11.2
 - scrapyd==1.5.0
-- scrapyd-client==v1.2.3
+- scrapyd-client==v2.0.0
 - scrapy-splash==0.9.0
 - scrapyrt==v0.16.0
 - spidermon==1.22.0
-- scrapy-poet==0.23.0
+- scrapy-poet==0.24.0
 - scrapy-playwright==v0.0.41
 
 ```bash
