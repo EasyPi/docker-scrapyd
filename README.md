@@ -26,7 +26,7 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 This image is based on `debian:bookworm`, 8 latest stable python packages are installed:
 
-- scrapy==2.11.2
+- scrapy==2.12.0
 - scrapyd==1.5.0
 - scrapyd-client==2.0.0
 - scrapy-splash==0.9.0
