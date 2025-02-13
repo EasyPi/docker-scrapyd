@@ -108,6 +108,7 @@ $ scrapy list
 $ vi scrapy.cfg
 $ scrapyd-client deploy
 $ curl http://localhost:6800/schedule.json -d project=myproject -d spider=myspider
+$ curl http://localhost:6800/daemonstatus.json
 $ firefox http://localhost:6800
 ```
 
