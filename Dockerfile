@@ -2,7 +2,7 @@
 # Dockerfile for scrapyd
 #
 
-FROM debian:bookworm
+FROM debian:trixie
 MAINTAINER EasyPi Software Foundation
 
 ARG TARGETPLATFORM
@@ -34,13 +34,13 @@ RUN set -xe \
                           python3 \
                           python3-cryptography \
                           python3-dev \
-                          python3-distutils \
                           python3-pil \
                           python3-pip \
+                          python3-setuptools \
                           tini \
                           vim-tiny \
     && if [[ ${TARGETPLATFORM} = "linux/arm/v7" ]]; then apt install -y cargo; fi \
-    && rm -f /usr/lib/python3.11/EXTERNALLY-MANAGED \
+    && rm -f /usr/lib/python3.13/EXTERNALLY-MANAGED \
     && pip install --no-cache-dir boto3 dateparser ipython \
                    https://github.com/scrapy/scrapy/archive/refs/tags/$SCRAPY_VERSION.zip \
                    https://github.com/scrapy/scrapyd/archive/refs/tags/$SCRAPYD_VERSION.zip \
