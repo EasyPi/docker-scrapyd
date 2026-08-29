@@ -26,7 +26,7 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 This image is based on `debian:bookworm`, 8 latest stable python packages are installed:
 
-- scrapy==2.17.0
+- scrapy==2.18.0
 - scrapyd==1.6.0
 - scrapyd-client==2.0.3
 - scrapy-splash==0.11.1
@@ -49,8 +49,6 @@ Please use this as base image for your own project.
 ## docker-compose.yml
 
 ```yaml
-version: "3.8"
-
 services:
 
   scrapyd:
