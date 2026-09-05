@@ -37,7 +37,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: docker/build-push-action@v4
+      - uses: docker/build-push-action@v7
         with:
           platforms: ${{ env.PLATFORMS }}
           build-args: |
@@ -49,6 +49,15 @@ jobs:
             ghcr.io/${{ env.IMAGE_NAME }}:${{ env.SCRAPYD_VERSION }}-${{ env.SCRAPY_VERSION }}
             ghcr.io/${{ env.IMAGE_NAME }}:latest
           push: true
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v5
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ env.IMAGE_NAME }}
+          readme-filepath: README.md
+          short-description: ${{ github.event.repository.description }}
 
       - if: ${{ always() }}
         uses: slackapi/slack-github-action@v4.0.0
