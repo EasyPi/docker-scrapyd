@@ -4,9 +4,11 @@ scrapyd
 [![](https://img.shields.io/github/actions/workflow/status/easypi/docker-scrapyd/build.yaml?logo=github&style=flat-square)](https://github.com/EasyPi/docker-scrapyd)
 [![](https://img.shields.io/docker/stars/easypi/scrapyd?logo=docker&style=flat-square)](https://hub.docker.com/r/easypi/scrapyd)
 
-![](https://img.shields.io/badge/platform-linux\/amd64-orange.svg?logo=linux&style=flat-square)
-![](https://img.shields.io/badge/platform-linux\/arm64-orange.svg?logo=linux&style=flat-square)
+![](https://img.shields.io/badge/linux-amd64-orange.svg?logo=linux&style=flat-square)
+![](https://img.shields.io/badge/linux-arm64-orange.svg?logo=linux&style=flat-square)
+
 ![](https://img.shields.io/badge/debian-trixie-A81D33.svg?logo=debian&style=flat-square)
+![](https://img.shields.io/badge/python-3.13-blue.svg?logo=python&style=flat-square)
 
 [scrapy][1] is an open source and collaborative framework for extracting the
 data you need from websites. In a fast, simple, yet extensible way.
