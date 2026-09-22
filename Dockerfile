@@ -6,7 +6,7 @@ FROM debian:trixie
 MAINTAINER EasyPi Software Foundation
 
 ARG TARGETPLATFORM
-ARG SCRAPY_VERSION=2.18.0
+ARG SCRAPY_VERSION=2.19.0
 ARG SCRAPYD_VERSION=1.6.0
 ARG SCRAPYD_CLIENT_VERSION=2.0.3
 ARG SCRAPY_SPLASH_VERSION=0.11.1
@@ -16,6 +16,8 @@ ARG SCRAPY_POET_VERSION=0.27.2
 ARG SCRAPY_PLAYWRIGHT_VERSION=v0.0.48
 
 SHELL ["/bin/bash", "-c"]
+
+COPY ./requirements.txt /tmp/
 
 RUN set -xe \
     && echo ${TARGETPLATFORM} \
@@ -49,6 +51,7 @@ RUN set -xe \
                    https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
                    https://github.com/scrapinghub/scrapy-poet/archive/refs/tags/$SCRAPY_POET_VERSION.zip \
                    https://github.com/scrapy-plugins/scrapy-playwright/archive/refs/tags/$SCRAPY_PLAYWRIGHT_VERSION.zip \
+    && pip install -r /tmp/requirements.txt --dry-run \
     && mkdir -p /etc/bash_completion.d \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
     && echo 'source /etc/bash_completion.d/scrapy_bash_completion' >> /root/.bashrc \

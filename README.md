@@ -6,6 +6,7 @@ scrapyd
 
 ![](https://img.shields.io/badge/platform-linux\/amd64-orange.svg?logo=linux&style=flat-square)
 ![](https://img.shields.io/badge/platform-linux\/arm64-orange.svg?logo=linux&style=flat-square)
+![](https://img.shields.io/badge/debian-trixie-A81D33.svg?logo=debian&style=flat-square)
 
 [scrapy][1] is an open source and collaborative framework for extracting the
 data you need from websites. In a fast, simple, yet extensible way.
@@ -26,27 +27,34 @@ utility which allows you to deploy your project to a Scrapyd server.
 
 [scrapy-playwright][8] is a Scrapy Download Handler which performs requests using Playwright for Python.
 
-This image is based on `debian:bookworm`, 8 latest stable python packages are installed:
+This image is based on `debian:trixie`, 8 latest stable python packages are installed:
 
-- scrapy==2.18.0
-- scrapyd==1.6.0
-- scrapyd-client==2.0.3
-- scrapy-splash==0.11.1
-- scrapyrt==v0.18.1
-- spidermon==1.27.0
-- scrapy-poet==0.27.2
-- scrapy-playwright==v0.0.48
+<details>
+<summary>pip-outdated</summary>
 
 ```bash
-# fetch latest versions
-echo "scrapy scrapyd scrapyd-client scrapy-splash scrapyrt spidermon scrapy-poet scrapy-playwright" |
-  xargs -n1 pip --disable-pip-version-check index versions 2>/dev/null |
-    grep -v Available
+$ pipx install pip-outdated
+$ pip-outdated requirements.txt
 ```
 
-Please use this as base image for your own project.
+| Name              | Installed | Wanted | Latest |
+|-------------------|-----------|--------|--------|
+| scrapy            | None      | 2.19.0 | 2.19.0 |
+| scrapyd           | None      | 1.6.0  | 1.6.0  |
+| scrapyd-client    | None      | 2.0.3  | 2.0.3  |
+| scrapy-splash     | None      | 0.11.1 | 0.11.1 |
+| scrapyrt          | None      | 0.18.1 | 0.18.1 |
+| spidermon         | None      | 1.27.0 | 1.27.0 |
+| scrapy-poet       | None      | 0.27.2 | 0.27.2 |
+| scrapy-playwright | None      | 0.0.48 | 0.0.48 |
 
-:warning: Scrapy (since [2.0.0][9]) has dropped support for Python 2.7, which reached end-of-life on 2020-01-01.
+</details>
+
+> [!Tip]
+> Please use this as base image for your own project.
+
+> [!Caution]
+> Scrapy (since [2.0.0][9]) has dropped support for Python 2.7, which reached end-of-life on 2020-01-01.
 
 ## docker-compose.yml
 
