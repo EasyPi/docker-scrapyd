@@ -51,7 +51,7 @@ RUN set -xe \
                    https://github.com/scrapinghub/spidermon/archive/refs/tags/$SPIDERMON_VERSION.zip \
                    https://github.com/scrapinghub/scrapy-poet/archive/refs/tags/$SCRAPY_POET_VERSION.zip \
                    https://github.com/scrapy-plugins/scrapy-playwright/archive/refs/tags/$SCRAPY_PLAYWRIGHT_VERSION.zip \
-    && pip install -r /tmp/requirements.txt --dry-run \
+    && pip install -r /tmp/requirements.txt --dry-run --quiet --report - 2>/dev/null \
     && mkdir -p /etc/bash_completion.d \
     && curl -sSL https://github.com/scrapy/scrapy/raw/master/extras/scrapy_bash_completion -o /etc/bash_completion.d/scrapy_bash_completion \
     && echo 'source /etc/bash_completion.d/scrapy_bash_completion' >> /root/.bashrc \

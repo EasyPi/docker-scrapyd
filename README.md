@@ -36,19 +36,11 @@ This image is based on `debian:trixie`, 8 latest stable python packages are inst
 
 ```bash
 $ pipx install pip-outdated
-$ pip-outdated requirements.txt
+$ pip-outdated requirements.txt | awk -F'[|[:space:]]+' '/-[|]-/ || (NF==6 && $4!=$5)'
 ```
 
 | Name              | Installed | Wanted | Latest |
 |-------------------|-----------|--------|--------|
-| scrapy            | None      | 2.19.0 | 2.19.0 |
-| scrapyd           | None      | 1.6.0  | 1.6.0  |
-| scrapyd-client    | None      | 2.0.3  | 2.0.3  |
-| scrapy-splash     | None      | 0.11.1 | 0.11.1 |
-| scrapyrt          | None      | 0.18.1 | 0.18.1 |
-| spidermon         | None      | 1.27.0 | 1.27.0 |
-| scrapy-poet       | None      | 0.27.2 | 0.27.2 |
-| scrapy-playwright | None      | 0.0.48 | 0.0.48 |
 
 </details>
 
@@ -56,7 +48,7 @@ $ pip-outdated requirements.txt
 > Please use this as base image for your own project.
 
 > [!Caution]
-> Scrapy (since [2.0.0][9]) has dropped support for Python 2.7, which reached end-of-life on 2020-01-01.
+> Scrapy (since [2.0.0][9]) has dropped support for Python 2.7, which reached [end-of-life][10] on 2020-01-01.
 
 ## docker-compose.yml
 
@@ -181,3 +173,4 @@ $ curl -s 'http://localhost:9080/crawl.json?spider_name=toscrape-css&callback=pa
 [7]: https://github.com/scrapinghub/scrapy-poet
 [8]: https://github.com/scrapy-plugins/scrapy-playwright
 [9]: <https://docs.scrapy.org/en/latest/news.html#scrapy-2-0-0-2020-03-03>
+[10]: https://endoflife.date/python
