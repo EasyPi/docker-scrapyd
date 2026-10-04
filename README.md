@@ -4,6 +4,7 @@ scrapyd
 [![](https://img.shields.io/github/actions/workflow/status/easypi/docker-scrapyd/build.yaml?logo=github&style=flat-square)](https://github.com/EasyPi/docker-scrapyd)
 [![](https://img.shields.io/docker/stars/easypi/scrapyd?logo=docker&style=flat-square)](https://hub.docker.com/r/easypi/scrapyd)
 [![](https://img.shields.io/github/license/easypi/docker-scrapyd?style=flat-square)](LICENSE.md)
+[![](https://img.shields.io/badge/enabled-purple?style=flat-square&logo=dependabot&label=dependabot)](https://github.com/EasyPi/docker-scrapyd/blob/master/.github/dependabot.yaml)
 
 ![](https://img.shields.io/badge/linux-amd64-orange.svg?logo=linux&style=flat-square)
 ![](https://img.shields.io/badge/linux-arm64-orange.svg?logo=linux&style=flat-square)
