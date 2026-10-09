@@ -37,11 +37,12 @@ This image is based on `debian:trixie`, 8 latest stable python packages are inst
 
 ```bash
 $ pipx install pip-outdated
-$ pip-outdated requirements.txt | awk -F'[|[:space:]]+' '/-[|]-/ || (NF==6 && $4!=$5)'
-```
-
+$ pip-outdated requirements.txt | grep '^[|+]' | awk -F'[|+]' '/-[|+]-/ || $4!=$5'
++-------------------+-----------+--------+--------+
 | Name              | Installed | Wanted | Latest |
-|-------------------|-----------|--------|--------|
++-------------------+-----------+--------+--------+
++-------------------+-----------+--------+--------+
+```
 
 </details>
 
