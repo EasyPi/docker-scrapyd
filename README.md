@@ -63,7 +63,7 @@ services:
       - "6800:6800"
     volumes:
       - ./data:/var/lib/scrapyd
-      - /usr/local/lib/python3.11/dist-packages
+      - /usr/local/lib/python3.13/dist-packages
     restart: unless-stopped
 
   scrapy:
@@ -88,9 +88,9 @@ services:
 ## Run it as background-daemon for scrapyd
 
 ```bash
-$ docker-compose up -d scrapyd
-$ docker-compose logs -f scrapyd
-$ docker cp scrapyd_scrapyd_1:/var/lib/scrapyd/items .
+$ docker compose up -d scrapyd
+$ docker compose logs -f scrapyd
+$ docker compose cp scrapyd:/var/lib/scrapyd/items .
 $ tree items
 └── myproject
     └── myspider
@@ -152,7 +152,7 @@ class StackOverflowSpider(scrapy.Spider):
         }
 _EOF_
 
-$ docker-compose run --rm scrapy
+$ docker compose run --rm scrapy
 >>> scrapy runspider stackoverflow_spider.py -o top-stackoverflow-questions.jl
 >>> cat top-stackoverflow-questions.jl
 >>> exit
@@ -162,7 +162,7 @@ $ docker-compose run --rm scrapy
 
 ```bash
 $ git clone https://github.com/scrapy/quotesbot.git .
-$ docker-compose up -d scrapyrt
+$ docker compose up -d scrapyrt
 $ curl -s 'http://localhost:9080/crawl.json?spider_name=toscrape-css&callback=parse&url=http://quotes.toscrape.com/&max_requests=5' | jq -c '.items[]'
 ```
 
