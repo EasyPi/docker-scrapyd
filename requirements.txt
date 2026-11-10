@@ -4,5 +4,5 @@ scrapyd-client==2.0.3
 scrapy-splash==0.11.1
 scrapyrt==0.18.1
 spidermon==1.27.0
-scrapy-poet==0.27.2
+scrapy-poet==0.28.0
 scrapy-playwright==0.0.48
