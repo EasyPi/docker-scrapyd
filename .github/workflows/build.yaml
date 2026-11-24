@@ -60,7 +60,7 @@ jobs:
           short-description: ${{ github.event.repository.description }}
 
       - if: ${{ always() }}
-        uses: slackapi/slack-github-action@v4.0.0
+        uses: slackapi/slack-github-action@v4.1.0
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_BOT_TOKEN }}
